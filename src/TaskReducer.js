@@ -36,6 +36,9 @@ export default function TaskApp() {
   const [tasks, dispatch] = useReducer(tasksReducer, initialTasks);
 
   function handleAddTask(text) {
+    if (!text) {
+      alert("Please fill Data");
+    }
     dispatch({
       type: "added",
       id: nextId++,
